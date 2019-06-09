@@ -30,7 +30,7 @@ def find_permutations(prefix_tree: PrefixTree, word: str) -> None:
     for i in range(MIN_WORD_LENGTH, len(word) + 1):
         for perm in (''.join(item) for item in permutations(word, i)):
             prefix = perm[0:PREFIX_LENGTH]
-            if i > MIN_WORD_LENGTH and prefix not in prefix_set:
+            if prefix not in prefix_set:
                 continue
 
             if perm == word:
